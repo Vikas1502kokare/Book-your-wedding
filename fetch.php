@@ -1,17 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "test";
+include("auth_session.php");
+include ("db.php");
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM contact_form";
+$sql = "SELECT * FROM contact_form1";
 $result = $conn->query($sql);
 
 
@@ -20,7 +11,7 @@ if(isset($_GET['delete']))
 {
   $id= validate($_GET['delete']);
   $condition =['id'=>$id];
-  $deleteMsg=delete_data($db, 'contact_form', $condition);
+  $deleteMsg=delete_data($db, 'contact_form1', $condition);
 
 }
 function delete_data($db, $tableName, $condition){
@@ -44,7 +35,26 @@ function validate($value) {
     $value = htmlspecialchars($value);
     return $value;
     }
-
+    if(isset($_GET['update'])){
+        $id = validate($_GET['update']);
+        $condition =['id'=>$id];
+        update_data($db, 'contact_form1', $condition);
+    }
+    
+    function update_data($db, $tableName, $condition){
+   
+        $conditionData='';
+        $i=0;
+        foreach($condition as $index => $data){
+            $and = ($i > 0)?' AND ':'';
+             $conditionData .= $and.$index." = "."'".$data."'";
+             $i++;
+        }
+        
+    //   $query= "UPDATE ".$tableName."SET name="."WHERE ".$conditionData;
+    //   $result= $db->query($query);
+    //   return $msg;
+    }
 $conn->close();
 
 ?>
@@ -65,6 +75,7 @@ $conn->close();
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="style.css">
+
 
     <style>
         table {
@@ -140,10 +151,7 @@ $conn->close();
                         <td><?php echo $rows['plan'];?></td>
                         <td><?php echo $rows['address'];?></td>
                        
-                        <td><a onclick = "function avi(){
-                            console.log("hello");
-                            
-                        }" class="btn btn-danger">Edit</a></td>
+                        <td><a href="fetch.php?update=<?php echo $rows['id']; ?>" class="btn btn-danger">Edit</a></td>
                         <td><a href="fetch.php?delete=<?php echo $rows['id']; ?>" class="btn btn-danger">Delete</a></td>
                        
                       
@@ -155,8 +163,14 @@ $conn->close();
                 </table>
             </section>
                     </div>
-                    <!-- <?php @include 'footer.php'; ?> -->
+                    <?php @include 'footer.php'; ?>
+                    
 </body>
+<script>
+    onclick = function vk(){
+        
+    }
+</script>
 
  
 </html>

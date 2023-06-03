@@ -1,6 +1,6 @@
 <?php
-
-$conn = mysqli_connect('localhost','root','','test');
+include("auth_session.php");
+include ("db.php");
 
 if(isset($_POST['send'])){
 
@@ -11,7 +11,7 @@ if(isset($_POST['send'])){
    $address = $_POST['address'];
    $message = $_POST['message'];
 
-   $insert = "INSERT INTO `contact_form`(`name`, `email`, `number`, `plan`, `address`, `message`) VALUES ('$name','$email','$number','$plan','$address','$message')";
+   $insert = "INSERT INTO `contact_form1`(`name`, `email`, `number`, `plan`, `address`, `message`) VALUES ('$name','$email','$number','$plan','$address','$message')";
 
    mysqli_query($conn, $insert);
 

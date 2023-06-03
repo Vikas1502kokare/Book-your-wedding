@@ -7,8 +7,16 @@
       <a href="about.php">about</a>
       <a href="portfolio.php">portfolio</a>
       <a href="pricing.php">pricing</a>
-      <a href="contact.php">contact</a>
+      <!-- <?php
+         
+         if(!isset($_SESSION["username"])) {
+            header("Location: login.php");
+            exit();
+         }
+      ?> -->
+  <a href="contact.php">contact</a>
       <a href="fetch.php">Users Data</a>
+      <a href="login.php">Login</a>
  
    </nav>
 
