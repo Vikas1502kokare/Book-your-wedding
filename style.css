@@ -489,6 +489,12 @@ section{
    color:var(--pink);
 }
 
+.footer-links{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
 
 
 /* media queries  */

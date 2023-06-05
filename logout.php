@@ -1,8 +1,7 @@
 <?php
-    session_start();
-    // Destroy session
-    if(session_destroy()) {
-        // Redirecting To Home Page
-        header("Location: login.php");
-    }
+
+    session_start(); //to ensure you are using same session
+    session_destroy(); //destroy the session
+    header("location:/wedding/home.php"); //to redirect back to "index.php" after logging out
+    exit();
 ?>

@@ -2,7 +2,7 @@
 
    <div class="box-container">
 
-      <div class="box">
+      <div class="box footer-links">
          <h3>quick links</h3>
          <a href="home.php"> <i class="fas fa-angle-right"></i> home</a>
          <a href="about.php"> <i class="fas fa-angle-right"></i> about</a>
@@ -11,7 +11,7 @@
          <a href="contact.php"> <i class="fas fa-angle-right"></i> contact</a>
       </div>
 
-      <div class="box">
+      <div class="box footer-links">
          <h3>extra links</h3>
          <a href="#"> <i class="fas fa-angle-right"></i> plan wedding</a>
          <a href="#"> <i class="fas fa-angle-right"></i> our services</a>
@@ -20,7 +20,7 @@
          <a href="#"> <i class="fas fa-angle-right"></i> privacy policy</a>
       </div>
 
-      <div class="box">
+      <div class="box footer-links">
          <h3>contact info</h3>
          <a href="#"> <i class="fas fa-phone"></i> +91 830 814 0040 </a>
          <a href="#"> <i class="fas fa-phone"></i> +91 751 750 0093 </a>
@@ -29,7 +29,7 @@
          <a href="#"> <i class="fas fa-map"></i> mumbai, Thane  india - 400104 </a>
       </div>
 
-      <div class="box">
+      <div class="box footer-links">
          <h3>follow us</h3>
          <a href="https://www.facebook.com"> <i class="fab fa-facebook-f"></i> facebook </a>
          <a href="https://www.twitter.com"> <i class="fab fa-twitter"></i> twitter </a>
